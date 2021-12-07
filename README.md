@@ -12,4 +12,4 @@ no monster found ( by default display is none) should be displayed.
 - All monsters are displayed loading from another module named "monsters.js"
 - "keyup" eventListener has been created on the search form.
 - default no-monster-found is displayed if keyword is not matched with any monster's name or email.
-- the logo image is rotateX(180 deg) is no-monster-found is appeared.
+- the logo image is transformed as->rotateX(180 deg) is no-monster-found is appeared.
