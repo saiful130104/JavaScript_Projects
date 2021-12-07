@@ -32,6 +32,15 @@ body {
   min-height: 100vh;
 }
 
+.logo img {
+  display:inline-block;
+  margin-right: 100px;
+  padding-left: 0;
+  background-color: #393e46;
+  border-radius: 50%;
+  border: 1px solid #fd0a7b;
+}
+
 .container {
   max-width: 90%;
   margin: 1vw auto 2vw auto;
