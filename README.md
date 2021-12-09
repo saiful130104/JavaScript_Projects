@@ -32,7 +32,7 @@ https://www.msbacademy.com/course/javascript-bootcamp/ref/1327/ref/1327/?campaig
   - **'+'** for income and **'-'** for expense.
 - User will add description. without any description no item will be added in the total item collection.
 - User will add the value(amount of the item). without any value no item will be added in the total item collection.
-- Expense item color will be always red and income item color will be green.
+- **Expense** and **income** items color will be always **red** and **green** respectively.
 - Every item will be added just **afterbegin** of the collection.
 
 ### Learning from eWallet project
