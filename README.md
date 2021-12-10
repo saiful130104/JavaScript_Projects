@@ -1,4 +1,4 @@
-# JavaScript_Projects
+# JavaScript_Projects_descriptions
 I have started my development journey with JavaScript and Here all of my projects with JS will be stored.
 I have enrolled the following course to start my journey to be a full stack JS developer.
 https://www.msbacademy.com/course/javascript-bootcamp/ref/1327/ref/1327/?campaign=javascript
@@ -37,6 +37,7 @@ https://www.msbacademy.com/course/javascript-bootcamp/ref/1327/ref/1327/?campaig
 
 ### Learning from eWallet project
 - work with **querySelector**
+- read and write data from/to the **LocalStorage**
 - Add **eventListener**( specially **'submit'** eventListener that is being used here)
 - work with the value of any input field.
 - update html element properties.
