@@ -72,8 +72,22 @@ function showRepo(repos){
 document.querySelector("#search").addEventListener('submit', async event => {
     event.preventDefault();
     const userName = document.querySelector('#findByUsername').value;
-    const profile = await getUser(userName);
-    const repos = await getRepos(profile.repos_url);
-    showProfile(profile);
-    showRepo(repos);
+    if (userName.length > 0){
+        document.querySelector('.user-details').style.display = 'none';
+        document.querySelector('.notFound').style.display = "none";
+        const loader = document.querySelector('.loader');
+        loader.style.display = 'flex';
+        const profile = await getUser(userName);
+        loader.style.display = 'none';
+        if( profile.message === "Not Found" ){
+            document.querySelector('.notFound').style.display = "flex";
+        }
+        else{
+            const repos = await getRepos(profile.repos_url);
+            showProfile(profile);
+            showRepo(repos);
+            document.querySelector('.user-details').style.display = 'flex';
+        }
+    }
+    document.querySelector('#findByUsername').value = '';
 });
