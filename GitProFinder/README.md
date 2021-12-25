@@ -9,6 +9,7 @@ https://www.msbacademy.com/course/javascript-bootcamp/ref/1327/ref/1327/?campaig
   
 ### Main task is done in MonsterFinder project
 - I have used 'https://api.github.com/users/' gitUser api and fetch the user info using this api.
+- I have used 'https://api.github.com/users/' gitUser api and fetch the user info using this api.
 - "Submit" eventListener has been created on the search form.
 - Learn to use of async await.
 - If user is not found then display "User not found".
