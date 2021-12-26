@@ -11,7 +11,7 @@
     <div class="container">
         <h1>Form Validator</h1>
         <h3 id="message"></h3>
-        <form id="form">
+        <form id="form" novalidate>
             <div class="form-group">
                 <label for="name">Full Name</label>
                 <input id="name" type="text" name="name" placeholder="Full Name" minlength="3" maxlength="50" required >
@@ -29,8 +29,8 @@
                 <input id="website" type="url" name="website" placeholder="https://www.google.com/" required >
             </div>
             <div class="form-group">
-                <label for="pasword1">Password</label>
-                <input id="pasword1" type="password" name="password" placeholder="Create password at least 8 characters." pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%&*?])[A-Za-z\d!@#$%&*?]{8,}$" title="Include at least 1 uppercase, 1 lowercase, 1 digit and 1 special character." required >
+                <label for="password1">Password</label>
+                <input id="password1" type="password" name="password" placeholder="Create password at least 8 characters." pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%&*?])[A-Za-z\d!@#$%&*?]{8,}$" title="Include at least 1 uppercase, 1 lowercase, 1 digit and 1 special character." required >
             </div>
             <div class="form-group">
                 <label for="password2">Confirm Password</label>
