@@ -10,7 +10,7 @@ https://www.msbacademy.com/course/javascript-bootcamp/ref/1327/ref/1327/?campaig
 ### Main task is done in FormValidator project
 - HTML form and input tag with several attributes.
 - Pattern attribute for particular input validation.
-- constraing api checkValidity()
+- constraint api checkValidity()
 - message displaying for invalid or password mismatch and registration successful message.
 - Get registered user details
 
