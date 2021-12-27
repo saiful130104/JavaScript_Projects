@@ -18,10 +18,15 @@ addTaskBtn.addEventListener('click', (event)=> {
     }
 })
 
-taskList.addEventListener('click', (event)=>{
+taskList.addEventListener('click', (event)=> {
     const target = event.target;
+    
     if(target.className.includes("task__op_delete"))
         ui.deleteTask(target);
+
     if(target.className.includes("task-check"))
         ui.completeTask(target);
+
+    if(target.className.includes("task__op_edit"))
+        ui.editTask(target, inputTask);
 })

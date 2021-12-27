@@ -4,11 +4,10 @@ function UI(){}
 
 const ls = new LS();
 const ui = new UI();
+const hiddenTask = document.querySelector('#hiddentaskID');
 
 UI.prototype.showAllTasks = (taskList) => {
-    console.log("showAllTasks is called\n");
     const tasks = ls.fetchTasks();
-    console.log(tasks);
     let newHtml = '';
     tasks.forEach(task => {
         newHtml += ui.makeTaskHtml(task);
@@ -52,5 +51,18 @@ UI.prototype.completeTask = (target) => {
     targetTask.classList.toggle('completed');
     ls.completeTask(taskId);
 };
+
+UI.prototype.editTask = (target, inputTask) => {
+    let targetTask = target.parentElement.parentElement ;
+    let taskId = targetTask.dataset.createdat;
+    console.log(targetTask);
+    let task = ls.findTask(taskId);
+    console.log(task);
+    hiddenTask.value = task.id;
+    inputTask.value = task.title;
+    document.querySelector('.AddTaskBtn').style.display = 'none';
+    document.querySelector('.EditTaskBtn').style.display = 'inline';
+    document.querySelector('.CancelTaskBtn').style.display = 'inline';
+}
 
 export default UI;
