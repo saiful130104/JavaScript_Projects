@@ -30,4 +30,12 @@ LS.prototype.findTask = (id) => {
     let tasks = ls.fetchTasks();
     return tasks.find( task => task.id === id);
 }
+
+LS.prototype.updateTask = (id, title) => {
+    let tasks = ls.fetchTasks();
+    let index = tasks.findIndex( task => task.id === id);
+    tasks[index].title = title;
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+}
+
 export default LS;
