@@ -4,7 +4,7 @@ function UI(){}
 
 const ls = new LS();
 const ui = new UI();
-const hiddenTask = document.querySelector('#hiddentaskID');
+let tempId;
 
 UI.prototype.showAllTasks = (taskList) => {
     const tasks = ls.fetchTasks();
@@ -16,9 +16,9 @@ UI.prototype.showAllTasks = (taskList) => {
 }
 
 UI.prototype.makeTaskHtml = (task) => {
-    return `<div class="task" data-createdat="${task.id}">
+    return `<div class="task ${task.isCompleted ? 'completed' : ''}" data-createdat="${task.id}">
     <div class="task__details">
-      <input type="checkbox" class="task-check" />
+      <input type="checkbox" class="task-check" ${task.isCompleted ? 'checked' : ''} />
       <label class="task-title">${task.title}</label>
     </div>
 
@@ -55,14 +55,29 @@ UI.prototype.completeTask = (target) => {
 UI.prototype.editTask = (target, inputTask) => {
     let targetTask = target.parentElement.parentElement ;
     let taskId = targetTask.dataset.createdat;
-    console.log(targetTask);
     let task = ls.findTask(taskId);
-    console.log(task);
-    hiddenTask.value = task.id;
+    tempId = task.id;
     inputTask.value = task.title;
     document.querySelector('.AddTaskBtn').style.display = 'none';
     document.querySelector('.EditTaskBtn').style.display = 'inline';
     document.querySelector('.CancelTaskBtn').style.display = 'inline';
+}
+
+UI.prototype.cancelTask = (inputTask) => {
+    ui.resetForm(inputTask);
+    document.querySelector('.AddTaskBtn').style.display = 'inline';
+    document.querySelector('.EditTaskBtn').style.display = 'none';
+    document.querySelector('.CancelTaskBtn').style.display = 'none';
+}
+
+UI.prototype.updateTask = (inputTask) => {
+    let titles = document.querySelectorAll('.task-title');
+    titles.forEach(title=>{
+        if(title.parentElement.parentElement.dataset.createdat === tempId)
+            title.innerText = inputTask.value;
+    });
+    ls.updateTask(tempId, inputTask.value);
+    ui.cancelTask(inputTask);
 }
 
 export default UI;

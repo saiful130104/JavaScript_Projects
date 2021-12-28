@@ -1,9 +1,10 @@
 import UI from './UI.js'
 import TASK from './TASK.js'
-import LS from './LS.js'
 
 const inputTask = document.querySelector('#newtaskID');
 const addTaskBtn = document.querySelector('.AddTaskBtn');
+const cancelTaskBtn = document.querySelector('.CancelTaskBtn');
+const editTaskBtn = document.querySelector('.EditTaskBtn');
 const taskList = document.querySelector('.task-list');
 const ui = new UI();
 
@@ -18,9 +19,21 @@ addTaskBtn.addEventListener('click', (event)=> {
     }
 })
 
+cancelTaskBtn.addEventListener('click', (event)=> {
+    event.preventDefault();
+    ui.cancelTask(inputTask);
+})
+
+editTaskBtn.addEventListener('click', (event)=> {
+    event.preventDefault();
+    if(inputTask.value){
+        ui.updateTask(inputTask);
+    }
+})
+
 taskList.addEventListener('click', (event)=> {
     const target = event.target;
-    
+
     if(target.className.includes("task__op_delete"))
         ui.deleteTask(target);
 
